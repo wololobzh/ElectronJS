@@ -1,30 +1,28 @@
-# ElectionJS
+# Module : Développement d’applications desktop avec Electron.js
 
-## Présentation
+Ce module permet aux étudiants de concevoir et développer des applications desktop multiplateformes (**Windows**, **macOS**, **Linux**) à l’aide d’**Electron.js**, en combinant les compétences web (HTML, CSS, JS) avec des capacités natives.
 
-Ce module permet aux étudiants de concevoir et développer des applications desktop multiplateformes (Windows, macOS, Linux) à l’aide de Electron.js, en combinant les compétences web (HTML, CSS, JS) avec des capacités natives. À travers un projet fil rouge, les étudiants apprendront à :
-Créer une interface desktop moderne et responsive.
- Intégrer des fonctionnalités système (fichiers, notifications, stockage local).
-Gérer les communications entre les processus principaux et rendus.
-Sécuriser et packager une application pour la distribution
-Ce module s’inscrit dans une logique de développement fullstack avancé, en lien avec les compétences attendues en entreprise ou en freelance.
-À l’issue de la formation, les étudiants seront capables de :
-Initialiser un projet Electron.js avec une architecture modulaire.
-Créer des interfaces desktop avec HTML/CSS/JS ou React. 
-Gérer les processus principaux et rendus (IPC). 
-Intégrer des fonctionnalités natives : accès fichiers, notifications, stockage. 
-Sécuriser l’application (sandboxing, contextBridge). 
-Packager et distribuer l’application sur plusieurs OS.
+À travers un **projet fil rouge**, les étudiants apprendront à :
 
-## Objectifs pédagogiques
+* Créer une interface desktop moderne et responsive.  
+* Intégrer des fonctionnalités système (fichiers, notifications, stockage local).  
+* Gérer les communications entre les processus principaux et rendus.  
+* Sécuriser et packager une application pour la distribution.
 
-À l’issue de la formation, les étudiants seront capables de :
-Initialiser un projet Electron.js avec une architecture modulaire.
-Créer des interfaces desktop avec HTML/CSS/JS ou React.
-Gérer les processus principaux et rendus (IPC).
-Intégrer des fonctionnalités natives : accès fichiers, notifications, stockage.
-Sécuriser l’application (sandboxing, contextBridge).
-Packager et distribuer l’application sur plusieurs OS.
+Ce module s’inscrit dans une logique de **développement fullstack avancé**, en lien avec les compétences attendues en entreprise ou en freelance.
+
+---
+
+### ✅ Compétences acquises en fin de module
+
+Les étudiants seront capables de :
+
+* Initialiser un projet **Electron.js** avec une architecture modulaire.  
+* Créer des interfaces desktop avec **HTML/CSS/JS** ou **React**.  
+* Gérer les processus principaux et rendus (**IPC**).  
+* Intégrer des fonctionnalités natives : accès fichiers, notifications, stockage.  
+* Sécuriser l’application (sandboxing, `contextBridge`).  
+* Packager et distribuer l’application sur plusieurs OS.
 
 ## Jour 1 – Fondamentaux & Architecture
 * Introduction à Electron.js : principes, cas d’usage
