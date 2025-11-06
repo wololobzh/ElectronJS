@@ -1,5 +1,9 @@
 # Module : Développement d’applications desktop avec Electron.js
 
+---
+
+## Présentation
+
 Ce module permet aux étudiants de concevoir et développer des applications desktop multiplateformes (**Windows**, **macOS**, **Linux**) à l’aide d’**Electron.js**, en combinant les compétences web (HTML, CSS, JS) avec des capacités natives.
 
 À travers un **projet fil rouge**, les étudiants apprendront à :
@@ -13,7 +17,7 @@ Ce module s’inscrit dans une logique de **développement fullstack avancé**, 
 
 ---
 
-### ✅ Compétences acquises en fin de module
+## Compétences acquises en fin de module
 
 Les étudiants seront capables de :
 
@@ -24,11 +28,15 @@ Les étudiants seront capables de :
 * Sécuriser l’application (sandboxing, `contextBridge`).  
 * Packager et distribuer l’application sur plusieurs OS.
 
+---
+
 ## Jour 1 – Fondamentaux & Architecture
 * Introduction à Electron.js : principes, cas d’usage
 * Initialisation du projet : main.js, preload.js, renderer
 * Structure d’un projet Electron modulaire
 * TP : création d’un gestionnaire de notes local
+
+---
 
 ## Jour 2 – UI & Communication
 * Création d’UI avec HTML/CSS/JS ou React
@@ -36,11 +44,15 @@ Les étudiants seront capables de :
 * Communication entre processus (IPC)
 * TP : ajout d’un système de sauvegarde et de notifications
 
+---
+
 ## Jour 3 – Fonctionnalités natives & Sécurité
 * Accès au système de fichiers
 * Stockage local (SQLite, JSON, IndexedDB)
 * Sécurité : contextBridge, sandboxing, bonnes pratiques
-* * TP : ajout d’un module de configuration utilisateur sécurisé
+* TP : ajout d’un module de configuration utilisateur sécurisé
+
+---
 
 ## Jour 4 – Packaging & Déploiement
 * Tests et debugging
@@ -48,5 +60,7 @@ Les étudiants seront capables de :
 * Distribution multiplateforme (Windows, macOS, Linux)
 * Présentation des projets
 * TP final : création d’un installateur + documentation technique
+
+---
 
 ## Jour 5 - TP Final et évaluation
