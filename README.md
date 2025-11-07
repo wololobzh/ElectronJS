@@ -50,36 +50,59 @@ Les étudiants seront capables de :
 
 ### Jour 1 – Fondamentaux & Architecture [👨‍🏫](./Jour1)
 
+De 9h à 11h :
+
 * Introduction au développement Desktop
 * Introduction à Electron.js : principes, cas d’usage
 * Initialisation du projet : main.js, preload.js, renderer
 * Structure d’un projet Electron modulaire
 * Atelier "La Machine à Blagues"
+
+Reste de la journée :
+
 * TP : Création d’un gestionnaire de notes local
 
 ---
 
 ### Jour 2 – UI & Communication [👨‍🏫](./Jour2/)
+
+De 9h à 11h :
+
 * Création d’UI avec HTML/CSS/JS ou React
 * Responsive design desktop
 * Communication entre processus (IPC)
 * Atelier "Liste d'utilisateurs persitée dans un fichier"
+
+Reste de la journée :
+
 * TP : Ajout d’un système de sauvegarde et de notifications
 
 ---
 
 ### Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/)
+
+De 9h à 11h :
+
 * Accès au système de fichiers
 * Stockage local (SQLite, JSON)
 * Sécurité : contextBridge, sandboxing, bonnes pratiques
 * Atelier "Liste d'utilisateurs persitée en BDD"
+
+Reste de la journée :
+
 * TP : Ajout d’un module de configuration utilisateur sécurisé
 
 ---
 
 ### Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/)
+
+De 9h à 11h :
+
 * Tests et debugging
 * Packaging avec Electron Forge / Builder
 * Distribution multiplateforme (Windows, macOS, Linux)
 * Atelier "Packaging & Déploiement"
+
+Reste de la journée :
+  
 * TP final
