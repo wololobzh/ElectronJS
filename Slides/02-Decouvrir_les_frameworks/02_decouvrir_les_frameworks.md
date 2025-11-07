@@ -35,7 +35,7 @@ Framework JavaScript basé sur Node.js et Chromium. Idéal pour créer des appli
 
 #### 📊 WinForms || WPF
 
-![WinForms || WPF](./../assets/Logo_Winform_wpf.jpg)
+![WinForms || WPF](./../../assets/Logo_Winform_wpf.jpg)
 
 Écosystème Microsoft pour créer des applications natives Windows performantes avec WPF et WinForms, intégrées à l'OS (ex. : Office).
 
@@ -43,7 +43,7 @@ Framework JavaScript basé sur Node.js et Chromium. Idéal pour créer des appli
 
 #### 📊 JavaFX
 
-![JavaFX](./../assets/Logo_JavaFX.png)
+![JavaFX](./../../assets/Logo_JavaFX.png)
 
 Technologie mature et cross-platform avec JavaFX et Swing pour créer des applications modernes. | Applications robustes et multiplateformes avec des interfaces riches (ex. : IntelliJ IDEA).
 
