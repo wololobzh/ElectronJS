@@ -30,7 +30,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 1 – Fondamentaux & Architecture
+## Jour 1 – Fondamentaux & Architecture [👨‍🏫](./Jour1)
 * Introduction à Electron.js : principes, cas d’usage
 * Initialisation du projet : main.js, preload.js, renderer
 * Structure d’un projet Electron modulaire
@@ -38,7 +38,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 2 – UI & Communication
+## Jour 2 – UI & Communication [👨‍🏫](./Jour2/)
 * Création d’UI avec HTML/CSS/JS ou React
 * Responsive design desktop
 * Communication entre processus (IPC)
@@ -46,7 +46,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 3 – Fonctionnalités natives & Sécurité
+## Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/)
 * Accès au système de fichiers
 * Stockage local (SQLite, JSON, IndexedDB)
 * Sécurité : contextBridge, sandboxing, bonnes pratiques
@@ -54,7 +54,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 4 – Packaging & Déploiement
+## Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/)
 * Tests et debugging
 * Packaging avec Electron Forge / Builder
 * Distribution multiplateforme (Windows, macOS, Linux)
@@ -63,4 +63,4 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 5 - TP Final et évaluation
+## Jour 5 - TP Final et évaluation [👨‍🏫](./Jour5/)
