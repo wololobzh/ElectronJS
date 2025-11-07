@@ -1,9 +1,3 @@
-Avec plaisir !
-Voici le **TP Final – Jour 4**, rédigé pour les apprenants, ton sympa, clair, structuré, et en cohérence avec tout le module.
-Ce TP clôt le projet fil rouge et prépare directement la **soutenance**, l’**écrit technique**, et la **mise en production réelle**.
-
----
-
 # 🧪 **TP Final — Jour 4 : Packaging, Déploiement & Release de votre application Electron**
 
 🎉 **Félicitations !**

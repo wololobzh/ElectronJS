@@ -59,7 +59,7 @@ De 9h à 11h :
 
 Reste de la journée :
 
-* TP : Création d’un gestionnaire de notes local
+* [TP : Création d’un gestionnaire de notes local](./Jour1/TP.md)
 
 ---
 
@@ -74,11 +74,11 @@ De 9h à 11h :
 
 Reste de la journée :
 
-* TP : Ajout d’un système de sauvegarde et de notifications
+* [TP : Ajout d’un système de sauvegarde et de notifications](./Jour2/TP.md)
 
 ---
 
-### Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/)
+### Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/TP.md)
 
 De 9h à 11h :
 
@@ -89,11 +89,11 @@ De 9h à 11h :
 
 Reste de la journée :
 
-* TP : Ajout d’un module de configuration utilisateur sécurisé
+* TP : Ajout d’un module de configuration utilisateur sécurisé](./Jour3/TP.md)
 
 ---
 
-### Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/)
+### Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/TP-Soutenance.md)
 
 De 9h à 11h :
 
@@ -104,4 +104,4 @@ De 9h à 11h :
 
 Reste de la journée :
   
-* TP final
+* [TP final & soutenance](./Jour4/TP-Soutenance.md)
