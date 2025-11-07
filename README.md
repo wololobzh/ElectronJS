@@ -44,7 +44,11 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 1 – Fondamentaux & Architecture [👨‍🏫](./Jour1)
+## Plan du cours
+
+**Organisé en mode projet, avec 70% de pratique :**
+
+### Jour 1 – Fondamentaux & Architecture [👨‍🏫](./Jour1)
 
 * Introduction au développement Desktop
 * Introduction à Electron.js : principes, cas d’usage
@@ -55,7 +59,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 2 – UI & Communication [👨‍🏫](./Jour2/)
+### Jour 2 – UI & Communication [👨‍🏫](./Jour2/)
 * Création d’UI avec HTML/CSS/JS ou React
 * Responsive design desktop
 * Communication entre processus (IPC)
@@ -64,7 +68,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/)
+### Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/)
 * Accès au système de fichiers
 * Stockage local (SQLite, JSON)
 * Sécurité : contextBridge, sandboxing, bonnes pratiques
@@ -73,7 +77,7 @@ Les étudiants seront capables de :
 
 ---
 
-## Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/)
+### Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/)
 * Tests et debugging
 * Packaging avec Electron Forge / Builder
 * Distribution multiplateforme (Windows, macOS, Linux)
