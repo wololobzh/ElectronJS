@@ -1,97 +1,153 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap");
+
+/* -------------------------- */
+/* 🎨 STYLES GLOBAUX MODERNES */
+/* -------------------------- */
 
 html.reveal-print body,
 body .reveal {
-  background-color: #f5f5f5; /* Teinte douce */
-  color: #333; /* Texte légèrement assombri pour le contraste */
+  background-color: #f7f8fa; /* Fond très doux et moderne */
+  color: #1f2937; /* Gris profond pour un contraste élégant */
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* -------------------------- */
+/* 📌 TITRES */
+/* -------------------------- */
 
 .reveal h1,
 .reveal h2,
 .reveal h3,
 .reveal h4,
 .reveal h5 {
-  font-family: 'Roboto', sans-serif; /* Police Roboto */
-  font-weight: 700; /* Gras pour les titres */
-  text-transform: none; /* Pas de majuscules automatiques */
-  color: #222; /* Un noir légèrement atténué */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  color: #111827; /* Titre noir profond élégant */
   margin-bottom: 1rem;
+  letter-spacing: -0.5px; /* Look moderne */
 }
 
-.reveal h1 { font-size: 2.8em; margin: 1.5rem 0; }
-.reveal h2 { font-size: 2.4em; margin: 1.4rem 0; }
-.reveal h3 { font-size: 1.8em; margin: 1.2rem 0; }
-.reveal h4 { font-size: 1.5em; margin: 1rem 0 0.8rem; }
-.reveal h5 { font-size: 1.2em; margin: 0.8rem 0 0.6rem; }
+.reveal h1 { font-size: 2.9em; margin: 1.4rem 0; }
+.reveal h2 { font-size: 2.3em; margin: 1.2rem 0; }
+.reveal h3 { font-size: 1.7em; margin: 1rem 0; }
+.reveal h4 { font-size: 1.4em; margin: 0.9rem 0; }
+.reveal h5 { font-size: 1.15em; margin: 0.7rem 0; }
+
+/* -------------------------- */
+/* ✅ LISTES */
+/* -------------------------- */
 
 .reveal ul {
-  font-family: 'Roboto', sans-serif; /* Police Roboto pour le texte */
-  font-size: 1.8rem;
-  line-height: 1.6; /* Meilleure lisibilité */
+  font-size: 1.7rem;
+  line-height: 1.6;
   margin-left: 1.5rem;
 }
 
 .reveal ul li {
   margin-bottom: 0.6rem;
+  padding-left: 0.4rem;
+  position: relative;
+}
+
+.reveal ul li::before {
+  /* Puces modernes */
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  color: #6366f1; /* Indigo moderne */
+  font-size: 1.2em;
 }
 
 .reveal ul li p {
   margin: 0;
 }
 
+/* -------------------------- */
+/* 🌈 CODE INLINE */
+/* -------------------------- */
+
 .reveal code {
-  font-family: 'Roboto', sans-serif; /* Police Roboto pour le code */
-  font-size: 1em;
-  background: #e8e8e8;
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px; /* Coins arrondis */
-  color: #d63384; /* Une teinte vive pour le code */
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.95em;
+  background: #eef2ff; /* Indigo très pâle */
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  color: #4f46e5; /* Indigo */
 }
+
+/* -------------------------- */
+/* 🧱 BLOCS DE CODE */
+/* -------------------------- */
 
 .reveal pre code {
-  font-family: 'Roboto Mono', monospace; /* Police fixe pour les blocs */
+  font-family: "Roboto Mono", monospace;
   font-size: 0.9em;
-  background-color: #2d2d2d; /* Couleur de fond élégante */
-  color: #e8e8e8;
-  padding: 1rem;
-  border-radius: 6px; /* Arrondi pour moderniser */
-  overflow-x: auto; /* Gestion du débordement horizontal */
+  background-color: #1e1e2e; /* Fond sombre moderne */
+  color: #f4f4f4;
+  padding: 1.2rem;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  border-left: 4px solid #6366f1; /* Accent color */
 }
+
+/* -------------------------- */
+/* 🖼️ IMAGES */
+/* -------------------------- */
 
 .reveal section img {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
-  border-radius: 6px; /* Coins arrondis */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
   background-color: transparent;
-  max-width: 100%; /* Limite la taille */
-  display: block; /* Centré en bloc */
-  margin: 1rem auto;
+  max-width: 100%;
+  display: block;
+  margin: 1.2rem auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.reveal section img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+/* -------------------------- */
+/* 📊 TABLEAUX */
+/* -------------------------- */
+
 .reveal table {
-  font-family: 'Roboto', sans-serif; /* Police Roboto pour les tableaux */
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Inter", sans-serif;
+  margin: 1.2rem 0;
   font-size: 1em;
-  border-collapse: collapse; /* Pas de double bordure */
-  width: 100%; /* Étendre la largeur */
-  margin: 1rem 0;
 }
 
 .reveal table th {
-  color: #222;
-  font-size: 1em;
-  font-weight: 700;
-  border-bottom: 2px solid #ccc; /* Bordure modernisée */
-  padding: 0.8rem;
+  background: #eef2ff; /* Indigo très pâle */
+  color: #1f2937;
+  font-weight: 600;
+  padding: 0.9rem;
+  border-bottom: 2px solid #d1d5db;
+  text-align: left;
 }
 
 .reveal table td {
-  padding: 0.6rem;
-  font-size: 0.9em;
-  color: #444;
+  padding: 0.75rem;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .reveal table tr:nth-child(even) {
-  background-color: #f9f9f9; /* Alternance des lignes */
+  background-color: #f9fafb;
 }
+
+/* -------------------------- */
+/* 🖨️ IMPRESSION */
+/* -------------------------- */
 
 @media print {
   html.reveal-print .reveal .slides p, 
@@ -103,7 +159,7 @@ body .reveal {
 
   .reveal pre code {
     font-size: 1.2em;
-    line-height: 1.5em;
-    border-radius: 0; /* Pas d'arrondi pour l'impression */
+    border-radius: 0;
+    line-height: 1.5;
   }
 }
