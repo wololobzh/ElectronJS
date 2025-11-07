@@ -31,6 +31,7 @@
 ![Electron](./../../assets/Logo_Electron.svg)
 
 Framework JavaScript basé sur Node.js et Chromium. Idéal pour créer des applications cross-platform avec des technologies web (HTML, CSS, JS). | Applications web empaquetées comme applications desktop (ex. : Slack, VS Code).
+
 ---
 
 #### 📊 WinForms || WPF
