@@ -52,11 +52,10 @@ Les étudiants seront capables de :
 
 De 9h à 11h :
 
-* Introduction au développement Desktop
-* Introduction à Electron.js : principes, cas d’usage
-* Initialisation du projet : main.js, preload.js, renderer
-* Structure d’un projet Electron modulaire
-* Atelier "La Machine à Blagues"
+* Introduction au développement Desktop [▶️](Slides/01-Introduction_au_dev_desktop/01_introduction.md)
+* Introduction à Electron.js : principes, cas d’usage [▶️](Slides/02-Decouvrir_les_frameworks/02_decouvrir_les_frameworks.md)
+* Initialisation du projet Electron modulaire : main.js, preload.js, renderer [▶️](Slides/03-Installation/03_installation_electron.md)
+* Atelier "La Machine à Blagues" [▶️](Slides/04-Atelier_01/04_atelier_journee_1.md)
 
 Reste de la journée :
 
