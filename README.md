@@ -1,3 +1,17 @@
+# Slideur
+
+## Installation
+
+`npm install`
+
+## Lancement du slideur
+
+`npm start` ou `npm run dev`
+
+Go sur `localhost:1234`
+
+---
+
 # Module : Développement d’applications desktop avec Electron.js
 
 ---

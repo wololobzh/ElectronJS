@@ -1,0 +1,36 @@
+/* Utilisation de variables CSS pour une meilleure personnalisation */
+:root {
+  --font-family: 'Roboto', sans-serif; /* Police moderne */
+  --background-color: #f8f9fa; /* Couleur de fond douce */
+  --text-color: #333; /* Texte principal */
+  --link-color: #007bff; /* Bleu moderne pour les liens */
+  --link-hover-color: #0056b3; /* Couleur des liens au survol */
+  --padding-size: 2rem; /* Marges globales */
+}
+
+* {
+  font-family: var(--font-family);
+  margin: 0; /* Réinitialisation des marges */
+  padding: 0; /* Réinitialisation des paddings */
+  box-sizing: border-box; /* Pour un meilleur contrôle des dimensions */
+}
+
+body {
+  background-color: var(--background-color); /* Fond moderne */
+  color: var(--text-color); /* Couleur du texte */
+  width: 90%;
+  padding: var(--padding-size); /* Espacement uniforme */
+  margin: 0 auto; /* Centrer le contenu horizontalement */
+  line-height: 1.6; /* Améliorer la lisibilité */
+}
+
+a {
+  color: var(--link-color); /* Liens avec une couleur dynamique */
+  text-decoration: none; /* Pas de soulignement */
+  line-height: 1.6;
+  transition: color 0.2s ease-in-out; /* Animation douce sur les couleurs */
+}
+
+a:hover {
+  color: var(--link-hover-color); /* Couleur au survol */
+}

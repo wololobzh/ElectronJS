@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+html.reveal-print body,
+body .reveal {
+  background-color: #f5f5f5; /* Teinte douce */
+  color: #333; /* Texte légèrement assombri pour le contraste */
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+  font-family: 'Roboto', sans-serif; /* Police Roboto */
+  font-weight: 700; /* Gras pour les titres */
+  text-transform: none; /* Pas de majuscules automatiques */
+  color: #222; /* Un noir légèrement atténué */
+  margin-bottom: 1rem;
+}
+
+.reveal h1 { font-size: 2.8em; margin: 1.5rem 0; }
+.reveal h2 { font-size: 2.4em; margin: 1.4rem 0; }
+.reveal h3 { font-size: 1.8em; margin: 1.2rem 0; }
+.reveal h4 { font-size: 1.5em; margin: 1rem 0 0.8rem; }
+.reveal h5 { font-size: 1.2em; margin: 0.8rem 0 0.6rem; }
+
+.reveal ul {
+  font-family: 'Roboto', sans-serif; /* Police Roboto pour le texte */
+  font-size: 1.8rem;
+  line-height: 1.6; /* Meilleure lisibilité */
+  margin-left: 1.5rem;
+}
+
+.reveal ul li {
+  margin-bottom: 0.6rem;
+}
+
+.reveal ul li p {
+  margin: 0;
+}
+
+.reveal code {
+  font-family: 'Roboto', sans-serif; /* Police Roboto pour le code */
+  font-size: 1em;
+  background: #e8e8e8;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px; /* Coins arrondis */
+  color: #d63384; /* Une teinte vive pour le code */
+}
+
+.reveal pre code {
+  font-family: 'Roboto Mono', monospace; /* Police fixe pour les blocs */
+  font-size: 0.9em;
+  background-color: #2d2d2d; /* Couleur de fond élégante */
+  color: #e8e8e8;
+  padding: 1rem;
+  border-radius: 6px; /* Arrondi pour moderniser */
+  overflow-x: auto; /* Gestion du débordement horizontal */
+}
+
+.reveal section img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border-radius: 6px; /* Coins arrondis */
+  background-color: transparent;
+  max-width: 100%; /* Limite la taille */
+  display: block; /* Centré en bloc */
+  margin: 1rem auto;
+}
+
+.reveal table {
+  font-family: 'Roboto', sans-serif; /* Police Roboto pour les tableaux */
+  font-size: 1em;
+  border-collapse: collapse; /* Pas de double bordure */
+  width: 100%; /* Étendre la largeur */
+  margin: 1rem 0;
+}
+
+.reveal table th {
+  color: #222;
+  font-size: 1em;
+  font-weight: 700;
+  border-bottom: 2px solid #ccc; /* Bordure modernisée */
+  padding: 0.8rem;
+}
+
+.reveal table td {
+  padding: 0.6rem;
+  font-size: 0.9em;
+  color: #444;
+}
+
+.reveal table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternance des lignes */
+}
+
+@media print {
+  html.reveal-print .reveal .slides p, 
+  html.reveal-print .reveal .slides td, 
+  html.reveal-print .reveal .slides li, 
+  html.reveal-print .reveal .slides div {
+    font-size: 18pt !important;
+  }
+
+  .reveal pre code {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    border-radius: 0; /* Pas d'arrondi pour l'impression */
+  }
+}
