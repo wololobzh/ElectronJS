@@ -78,12 +78,4 @@ Les étudiants seront capables de :
 * Packaging avec Electron Forge / Builder
 * Distribution multiplateforme (Windows, macOS, Linux)
 * Atelier "Packaging & Déploiement"
-* TP final : création d’un installateur + documentation technique
-* Début du TP final
-
----
-
-## Jour 5 - TP Final et évaluation [👨‍🏫](./Jour5/)
-
-* Fin du TP final
-* QCM d'évaluation
+* TP final
