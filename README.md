@@ -105,3 +105,9 @@ De 9h à 11h :
 Reste de la journée :
   
 * [TP final & soutenance](./Jour4/TP-Soutenance.md)
+
+### Jour 5 - Préparation soutenance et soutenance orale
+
+* Finalisation du projet
+* Création des support de présentation
+* Soutenance
