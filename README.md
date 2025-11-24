@@ -70,7 +70,7 @@ De 9h à 11h :
 * Création d’UI avec React. [▶️](Slides/06-React/06-React.md)
 * Responsive design desktop. [▶️](Slides/07-Design/07-Design.md)
 * Communication entre processus (IPC) [▶️](Slides/08-IPC/08-IPC.md)
-* Atelier "Liste d'utilisateurs persitée dans un fichier"
+* Stockage local (SQLite) [▶️](Slides/10-SQLite/10_SQLite.md)
 
 Reste de la journée :
 
@@ -82,10 +82,10 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Accès au système de fichiers
-* Stockage local (SQLite, JSON) [▶️](Slides/10-SQLite/10_SQLite.md)
-* Sécurité : contextBridge, sandboxing, bonnes pratiques
-* Atelier "Liste d'utilisateurs persitée en BDD"
+* Tests et debugging
+* Packaging avec Electron Forge / Builder
+* Distribution multiplateforme (Windows, macOS, Linux)
+* Atelier "Packaging & Déploiement"
 
 Reste de la journée :
 
@@ -97,17 +97,16 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Tests et debugging
-* Packaging avec Electron Forge / Builder
-* Distribution multiplateforme (Windows, macOS, Linux)
-* Atelier "Packaging & Déploiement"
+* Présentation oral & attendus
+* Finalisation du projet
+* Création des support de présentation
 
 Reste de la journée :
   
 * [TP final & soutenance](./Jour4/TP-Soutenance.md)
 
-### Jour 5 - Préparation soutenance et soutenance orale
+### Jour 5 - Préparation soutenance et soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
 
-* Finalisation du projet
+* Finalisation du projet 
 * Création des support de présentation
-* Soutenance
+* **Soutenance**
