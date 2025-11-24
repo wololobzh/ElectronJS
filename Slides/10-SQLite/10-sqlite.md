@@ -95,52 +95,79 @@ module.exports = {
 ## ⚡ main.js (Processus principal Electron)
 
 ```js
+// Importe les modules nécessaires depuis Electron :
+// app = contrôle du cycle de vie de l'application
+// BrowserWindow = création de fenêtres
+// ipcMain = communication IPC (Main <-> Renderer)
 const { app, BrowserWindow, ipcMain } = require('electron');
+
+// Importe le module path pour construire des chemins corrects selon l'OS
 const path = require('path');
+
+// Importe le module de base de données (db.js)
 const db = require('./db');
 
+// Fonction qui crée la fenêtre principale de l'application
 function createWindow() {
   const win = new BrowserWindow({
-    width: 600,
-    height: 500,
+    width: 600,           // largeur de la fenêtre
+    height: 500,          // hauteur de la fenêtre
+
+    // Paramètres du moteur de rendu (renderer)
     webPreferences: {
+      // Charge le fichier preload, qui fait le lien sécurisé entre
+      // process main et process renderer
       preload: path.join(__dirname, 'renderer.js'),
+
+      // Empêche l'accès direct à Node.js dans le renderer (sécurité)
       contextIsolation: true,
+
+      // Désactive le nodeIntegration dans le renderer
       nodeIntegration: false
     }
   });
 
+  // Charge le fichier HTML dans la fenêtre
   win.loadFile('index.html');
 }
 
+// Lorsque Electron est prêt, on crée une fenêtre
 app.whenReady().then(createWindow);
 
+// ———————————————————————————————————————————————
+// GESTION DES MESSAGES IPC (Main <-> Renderer)
+// ———————————————————————————————————————————————
+
+// Handler IPC pour récupérer tous les produits
 ipcMain.handle('get-products', () => {
   return new Promise((resolve, reject) => {
     db.getAll((err, rows) => {
-      if (err) reject(err);
-      else resolve(rows);
+      if (err) reject(err);   // en cas d'erreur, on rejette la Promise
+      else resolve(rows);     // sinon on renvoie les résultats
     });
   });
 });
 
+// Handler IPC pour ajouter un produit
 ipcMain.handle('add-product', (event, name) => {
   return new Promise((resolve, reject) => {
     db.add(name, (err, id) => {
-      if (err) reject(err);
-      else resolve({ id, name });
+      if (err) reject(err);          // erreur → reject()
+      else resolve({ id, name });    // succès → renvoie l'objet ajouté
     });
   });
 });
 
+// Handler IPC pour supprimer un produit
 ipcMain.handle('delete-product', (event, id) => {
   return new Promise((resolve, reject) => {
     db.remove(id, (err) => {
-      if (err) reject(err);
-      else resolve(true);
+      if (err) reject(err);     // erreur SQL → reject
+      else resolve(true);       // succès → true
     });
   });
 });
+
 ```
 
 ---
