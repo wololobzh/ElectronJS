@@ -83,7 +83,7 @@ Reste de la journée :
 De 9h à 11h :
 
 * Accès au système de fichiers
-* Stockage local (SQLite, JSON)
+* Stockage local (SQLite, JSON) [▶️](Slides/10-SQLite/10_SQLite.md)
 * Sécurité : contextBridge, sandboxing, bonnes pratiques
 * Atelier "Liste d'utilisateurs persitée en BDD"
 
