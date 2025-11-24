@@ -70,7 +70,7 @@ De 9h à 11h :
 * Création d’UI avec React. [▶️](Slides/06-1-React/06-React.md)
 * Responsive design desktop. [▶️](Slides/07-Design/07-Design.md)
 * Communication entre processus (IPC) [▶️](Slides/08-IPC/08-IPC.md)
-* Stockage local (SQLite) [▶️](Slides/10-SQLite/10_SQLite.md)
+* Stockage local (SQLite) [▶️](Slides/10-SQLite/10-sqlite.md)
 
 Reste de la journée :
 
