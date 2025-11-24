@@ -67,9 +67,9 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Création d’UI avec React
-* Responsive design desktop
-* Communication entre processus (IPC)
+* Création d’UI avec React. [▶️](Slides/06-React/06-React.md)
+* Responsive design desktop. [▶️](Slides/07-Design/07-Design.md)
+* Communication entre processus (IPC) [▶️](Slides/08-Design/08-Design.md)
 * Atelier "Liste d'utilisateurs persitée dans un fichier"
 
 Reste de la journée :
