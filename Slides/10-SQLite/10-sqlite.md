@@ -39,33 +39,51 @@ shopping-app/
 ## 🧠 db.js (Gestion SQLite)
 
 ```js
+// Importe le module sqlite3 et active le mode "verbose" pour avoir plus de logs/debug
 const sqlite3 = require('sqlite3').verbose();
+
+// Importe le module path, utilisé pour gérer les chemins de fichiers
 const path = require('path');
 
+// Crée/ouvre la base SQLite située dans le même dossier que ce fichier (shopping.db)
 const db = new sqlite3.Database(path.join(__dirname, 'shopping.db'));
 
+// Exécute les commandes SQL de manière séquentielle
 db.serialize(() => {
+  // Crée la table 'products' si elle n'existe pas déjà
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL
+      id INTEGER PRIMARY KEY AUTOINCREMENT,  // Identifiant unique auto-incrémenté
+      name TEXT NOT NULL                     // Nom du produit, obligatoire
     )`
   );
 });
 
+// Exporte un objet contenant trois méthodes pour interagir avec la base
 module.exports = {
+  
+  // Récupère tous les produits
   getAll(callback) {
+    // Exécute une requête SELECT et renvoie toutes les lignes
     db.all("SELECT * FROM products", [], (err, rows) => {
-      callback(err, rows);
+      callback(err, rows); // Passe les résultats au callback
     });
   },
+
+  // Ajoute un produit
   add(name, callback) {
+    // INSERT avec un paramètre (sécurisé pour éviter les injections SQL)
     db.run("INSERT INTO products (name) VALUES (?)", [name], function (err) {
+      // 'this.lastID' contient l'ID auto-généré du nouvel élément
       callback(err, this.lastID);
     });
   },
+
+  // Supprime un produit via son ID
   remove(id, callback) {
+    // DELETE d'un produit en fonction de son ID
     db.run("DELETE FROM products WHERE id = ?", [id], function (err) {
+      // On ne renvoie que l’erreur éventuelle
       callback(err);
     });
   }
