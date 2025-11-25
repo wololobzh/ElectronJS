@@ -78,7 +78,7 @@ Reste de la journée :
 
 ---
 
-### Jour 3 – Fonctionnalités natives & Sécurité [👨‍🏫](./Jour3/TP.md)
+### Jour 3 – Test, Packaging & Déploiement  [👨‍🏫](./Jour3/TP.md)
 
 De 9h à 11h :
 
@@ -93,7 +93,7 @@ Reste de la journée :
 
 ---
 
-### Jour 4 – Packaging & Déploiement [👨‍🏫](./Jour4/TP-Soutenance.md)
+### Jour 4 – Préparation soutenance & finalisation du projet [👨‍🏫](./Jour4/TP-Soutenance.md)
 
 De 9h à 11h :
 
@@ -105,7 +105,7 @@ Reste de la journée :
   
 * [TP final & soutenance](./Jour4/TP-Soutenance.md)
 
-### Jour 5 - Préparation soutenance et soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
+### Jour 5 - Soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
 
 * Finalisation du projet 
 * Création des support de présentation
