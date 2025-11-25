@@ -110,6 +110,27 @@ app.on('window-all-closed', () => {
 
 ---
 
+## 🎯 Qu’est-ce qu’un fichier *preload* dans Electron ?
+
+Dans Electron, le *preload* est un **petit fichier JavaScript qui s’exécute AVANT que la page web (ton front) ne se charge dans la fenêtre**.
+
+Il sert **d’intermédiaire sécurisé** entre :
+
+* **le monde navigateur** (le code de ta page web → HTML, JS, React, Vue, etc.)
+* **le monde Node.js** (le système, les fichiers, les APIs d’Electron)
+
+---
+
+## 🧠 Pourquoi on a besoin d’un preload ?
+
+Parce que **le code du navigateur n’a PAS directement le droit d’utiliser Node.js** pour des raisons de sécurité.
+→ Exemple : ton React ne peut pas faire `fs.readFile()` pour lire ton disque.
+
+Le preload sert donc à **exposer uniquement ce qui est autorisé**, comme une *passerelle*.
+
+
+---
+
 # Étape 7 : Ajouter le preload (sécurisé)
 
 ## electron/preload.js
