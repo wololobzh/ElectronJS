@@ -54,35 +54,45 @@ Voici la config :
 
 ```json
 {
-  "name": "app-electron-demo",
+  "name": "demoavecsqlite3",
   "version": "1.0.0",
+  "description": "Demo Electron + SQLite3",
   "main": "main.js",
+  "scripts": {
+    "start": "set MODE=dev && electron .",
+    "test": "set MODE=dev && jest",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^39.2.3",
+    "electron-builder": "^26.0.12",
+    "jest": "^30.2.0"
+  },
   "build": {
     "appId": "com.demo.app",
     "productName": "DemoApp",
     "directories": {
       "output": "dist"
     },
+    "asar": true,
     "files": [
-      "dist/**/*",
-      "main.js",
-      "preload.js",
-      "package.json"
+      "**/*",
+      "!dist/**/*",
+      "!test/**/*"
     ],
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "assets/icon.icns"
-    },
-    "linux": {
-      "target": "AppImage",
-      "icon": "assets/icon.png"
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false,
+      "forceCodeSigning": false
     }
   }
 }
+
 ```
 
 ---
@@ -170,44 +180,3 @@ if (app.isPackaged) {
 
 ---
 
-# 8. Erreurs fréquentes (à montrer aux étudiants)
-
-### ❌ “Cannot find module”
-
-→ Mauvais chemin dans `"files"`.
-
-### ❌ L’écran reste blanc
-
-→ Le chemin vers ton `index.html` change en mode packagé :
-
-```js
-mainWindow.loadURL(`file://${path.join(__dirname, 'dist/index.html')}`);
-```
-
-### ❌ La build mac ne fonctionne pas sous Windows
-
-→ On ne peut **pas** builder macOS sur Windows (Apple SDK requis).
-
----
-
-# 9. Mini-TP (20 minutes)
-
-### 🎯 Objectif :
-
-Packager l’application fil rouge avec une icône personnalisée.
-
-### Tâches :
-
-1. Ajouter les scripts build dans `package.json`
-2. Créer un fichier `electron-builder.yml` ou partie `"build"`
-3. Ajouter une icône (format selon l’OS)
-4. Lancer la commande :
-
-```bash
-npm run build
-```
-
-5. Vérifier que l’installateur fonctionne.
-
-🎓 **Livrable :**
-Un `.exe` ou `.dmg` avec le nom du projet + icône custom.
