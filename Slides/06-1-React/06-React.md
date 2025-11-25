@@ -59,34 +59,51 @@ dist
 ## electron/main.js
 
 ```js
+// On importe deux choses depuis la bibliothèque "electron" :
+// - "app" : représente l'application Electron (son cycle de vie)
+// - "BrowserWindow" : permet de créer une fenêtre graphique
 const { app, BrowserWindow } = require('electron');
+
+// On importe la bibliothèque "path" qui sert à gérer les chemins de fichiers
 const path = require('path');
 
+// Une variable pour stocker la fenêtre principale de l'application
 let mainWindow;
 
 function createWindow() {
+  // On crée une nouvelle fenêtre
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 700,
+    width: 900,  // largeur de la fenêtre
+    height: 700, // hauteur de la fenêtre
     webPreferences: {
+      // On indique où se trouve le fichier preload.js
+      // (ce fichier sert à faire le lien entre le front et le Node.js d'Electron)
       preload: path.join(__dirname, 'preload.js'),
     },
   });
 
-  // En dev : charger Vite
+  // Si on est en mode développement (VITE crée un serveur pour recharger le code en direct)
   if (process.env.VITE_DEV_SERVER_URL) {
+    // On charge l'URL du serveur de développement
     mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
+
+    // On ouvre les outils de développement (console, inspecteur…)
     mainWindow.webContents.openDevTools();
   } 
-  // En build : charger index.html compilé
+  // Sinon (si on est en version "build", prête à être distribuée)
   else {
+    // On charge le fichier HTML final compilé dans /dist
     mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
   }
 }
 
+// Lorsque l'application Electron est prête, on crée la fenêtre
 app.whenReady().then(createWindow);
 
+// Quand toutes les fenêtres sont fermées…
 app.on('window-all-closed', () => {
+  // …alors on quitte l'application, sauf sur Mac ("darwin")
+  // car sur Mac, les apps restent actives même sans fenêtre
   if (process.platform !== 'darwin') app.quit();
 });
 ```
