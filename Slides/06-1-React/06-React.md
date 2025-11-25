@@ -278,8 +278,14 @@ app.whenReady().then(createWindow);
 
 ## 2. preload.js
 
+Ajout d'une API nommée **gameApi**, celle nommée **api** ne sert plus à rien.
+
 ```js
 const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('api', {
+  ping: () => "pong depuis Electron",
+});
 
 contextBridge.exposeInMainWorld('gameApi', {
   guess: (n) => ipcRenderer.send('guess', n),
