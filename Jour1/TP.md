@@ -1,31 +1,35 @@
-# Projet fils rouge
+# Projet fil rouge
 
 ## Sujet libre
 
-chacun choisi son sujet.
+Chacun choisit son sujet.
 
-## Github || Gitlab
+## GitHub || GitLab
 
-Votre projet doit être versionné sur github ou gitlab
+Votre projet doit être versionné sur GitHub ou GitLab.
 
 ## CI
 
-Une Ci doit être mise en place avec au minimum un linter html.
+Une **CI** doit être mise en place, avec au minimum un linter HTML.
 
 ## Persistance
 
-Au moins 2 types d'entités doivent être persistées.
+Au moins deux types d'entités doivent être persistés.
 
-# Readme.md
+## Tests
 
-Un readme de qualité vous est demandé tout au long du projet.
+Un minimum de tests doivent être effectués avec Jest
 
-Celui ci doit contenir les éléments suivants :
+# README.md
 
-* Documentation pour lancer le projet.
-* Documentation sur le fonctionnement du projet.
+Un README de qualité vous est demandé tout au long du projet.
+
+Celui-ci doit contenir les éléments suivants :
+
+* Documentation pour lancer le projet
+* Documentation sur le fonctionnement du projet
 * Le contexte
 * La description du projet
-* Les uses cases
-* Modèle de données
-* L'architecture
+* Les use cases
+* Le modèle de données
+* L’architecture

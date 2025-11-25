@@ -53,8 +53,8 @@ db.serialize(() => {
   // Crée la table 'products' si elle n'existe pas déjà
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,  // Identifiant unique auto-incrémenté
-      name TEXT NOT NULL                     // Nom du produit, obligatoire
+      id INTEGER PRIMARY KEY AUTOINCREMENT,  -- Identifiant unique auto-incrémenté
+      name TEXT NOT NULL                     -- Nom du produit, obligatoire
     )`
   );
 });

@@ -22,7 +22,7 @@ C’est le **standard actuel** pour packager Electron
 Ajoute Electron Builder :
 
 ```bash
-npm install --save-dev electron-builder
+npm install electron-builder
 ```
 
 ---
@@ -42,8 +42,7 @@ Ajoute les scripts dans ton `package.json` :
 }
 ```
 
-💡 **À retenir :**
-`npm run build` → build pour l’OS sur lequel tu te trouves.
+`npm run build` → build pour l’OS hôte.
 
 ---
 
