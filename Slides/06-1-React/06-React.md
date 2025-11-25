@@ -172,6 +172,17 @@ Installer les outils nécessaires :
 npm install concurrently wait-on --save-dev
 ```
 
+Pourquoi on installe ces deux outils ensemble ?
+
+Parce qu’ils sont très souvent utilisés dans ce flux :
+
+1️⃣ lancer Vite
+2️⃣ attendre que Vite soit prêt
+3️⃣ lancer Electron automatiquement
+4️⃣ et faire tout ça en même temps
+
+Grâce à concurrently + wait-on → tout est fluide.
+
 ---
 
 # Étape 9 : Appeler l’API Electron dans React
