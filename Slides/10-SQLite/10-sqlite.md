@@ -148,6 +148,18 @@ ipcMain.handle('get-products', () => {
   });
 });
 
+//👉 Pourquoi une Promise ?
+//Parce que db.getAll est asynchrone (il prend un callback).
+//Tu dois donc attendre le résultat avant de répondre au renderer.
+//
+//La Promise sert à dire :
+//
+//resolve(resultat) → tout s’est bien passé
+//
+//reject(erreur) → il y a eu un problème
+//
+//Electron attend que la Promise soit finie, puis il renvoie ça au côté renderer.
+
 // Handler IPC pour ajouter un produit
 ipcMain.handle('add-product', (event, name) => {
   return new Promise((resolve, reject) => {
