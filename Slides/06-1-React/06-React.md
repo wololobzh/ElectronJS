@@ -166,6 +166,12 @@ Dans `package.json`, ajoute :
 }
 ```
 
+et on supprimer :
+
+```json
+"type": "module",
+```
+
 Installer les outils nécessaires :
 
 ```bash
