@@ -55,7 +55,7 @@ De 9h à 11h :
 * Introduction au développement Desktop [▶️](Slides/01-Introduction_au_dev_desktop/01_introduction.md)
 * Introduction à Electron.js : principes, cas d’usage [▶️](Slides/02-Decouvrir_les_frameworks/02_decouvrir_les_frameworks.md)
 * Initialisation du projet Electron modulaire : main.js, preload.js, renderer [▶️](Slides/03-Installation/03_installation_electron.md)
-* Atelier "La Machine à Blagues" [▶️](Slides/04-Atelier_01/04_atelier_journee_1.md)
+* (optionnel) Atelier "La Machine à Blagues" [▶️](Slides/04-Atelier_01/04_atelier_journee_1.md)
 
 Reste de la journée :
 
@@ -69,8 +69,8 @@ De 9h à 11h :
 
 * Stockage local (SQLite) [▶️](Slides/10-SQLite/10-sqlite.md)
 * Création d’UI avec React. [▶️](Slides/06-1-React/06-React.md)
-* (option) Responsive design desktop. [▶️](Slides/07-Design/07-Design.md)
-* (option) Communication entre processus (IPC) [▶️](Slides/08-IPC/08-IPC.md)
+* (optionnel) Responsive design desktop. [▶️](Slides/07-Design/07-Design.md)
+* (optionnel) Communication entre processus (IPC) [▶️](Slides/08-IPC/08-IPC.md)
 
 Reste de la journée :
 
