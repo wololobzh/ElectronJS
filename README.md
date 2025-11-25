@@ -74,7 +74,7 @@ De 9h à 11h :
 
 Reste de la journée :
 
-* [TP : Ajout d’un système de sauvegarde et de notifications](./Jour2/TP.md)
+* [TP : Projet fils rouge](./Jour1/TP.md)
 
 ---
 
@@ -82,14 +82,12 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Tests et debugging
-* Packaging avec Electron Forge / Builder
-* Distribution multiplateforme (Windows, macOS, Linux)
-* Atelier "Packaging & Déploiement"
+* Tests et debugging [▶️](Slides/11-TestsEtDebugguing/11-TestsEtDebugguing.md)
+* Packaging avec Electron Builder [▶️](Slides/12-Packaging/12-Packaging.md)
 
 Reste de la journée :
 
-* TP : Ajout d’un module de configuration utilisateur sécurisé](./Jour3/TP.md)
+* [TP : Projet fils rouge](./Jour1/TP.md)
 
 ---
 
@@ -103,7 +101,7 @@ De 9h à 11h :
 
 Reste de la journée :
   
-* [TP final & soutenance](./Jour4/TP-Soutenance.md)
+* [TP : Projet fils rouge](./Jour1/TP.md)
 
 ### Jour 5 - Soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
 
