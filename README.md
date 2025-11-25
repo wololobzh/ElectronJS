@@ -59,7 +59,7 @@ De 9h à 11h :
 
 Reste de la journée :
 
-* [TP : Création d’un gestionnaire de notes local](./Jour1/TP.md)
+* [TP : Projet fils rouge](./Jour1/TP.md)
 
 ---
 
