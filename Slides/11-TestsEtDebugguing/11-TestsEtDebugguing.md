@@ -330,7 +330,7 @@ const path = require('path');
 const fs = require('fs');
 
 // -------------------------------------------------------------
-// 🔥 Fonction pour résoudre correctement le chemin vers db.js
+// Fonction pour résoudre correctement le chemin vers db.js
 // -------------------------------------------------------------
 function resolveDbPath() {
   // Chemin dev (lancer avec `npm start`)
@@ -348,7 +348,7 @@ const db = require(resolveDbPath());
 
 
 // -------------------------------------------------------------
-// 🔥 Création de la fenêtre principale
+// Création de la fenêtre principale
 // -------------------------------------------------------------
 function createWindow() {
   const win = new BrowserWindow({
@@ -370,35 +370,72 @@ app.whenReady().then(() => {
 
 
 // -------------------------------------------------------------
-// 🔥 Handlers IPC (Renderer -> Main)
+// Handlers IPC (Renderer -> Main)
+// -------------------------------------------------------------
+// Ce bloc définit les "handlers" IPC côté PROCESSUS PRINCIPAL (main process)
+// pour permettre au front-end (renderer process) de communiquer
+// avec la base SQLite via des méthodes exposées dans le main.
+// 
+// ipcMain.handle() permet au renderer d’appeler ces fonctions
+// via : window.electron.invoke('channel', args)
+// Cela renvoie une Promesse automatiquement.
 // -------------------------------------------------------------
 
+
 ipcMain.handle('get-products', () => {
+  // Ce handler IPC est appelé quand le renderer exécute :
+  //   window.electron.invoke('get-products')
+  //
+  // On renvoie une promesse car db.getAll utilise un callback.
   return new Promise((resolve, reject) => {
     db.getAll((err, rows) => {
+      // Si une erreur survient pendant la lecture SQLite :
       if (err) reject(err);
+      // Sinon on renvoie la liste complète des produits
       else resolve(rows);
     });
   });
 });
 
+
+
 ipcMain.handle('add-product', (event, name) => {
+  // Handler appelé depuis :
+  //   window.electron.invoke('add-product', name)
+  //
+  // Même principe : on convertit l’API callback sqlite en Promesse.
   return new Promise((resolve, reject) => {
+    // db.add insère un nouveau produit dans la base
     db.add(name, (err, id) => {
       if (err) reject(err);
-      else resolve({ id, name });
+      else {
+        // On renvoie un objet contenant :
+        //   - l'id auto-incrémenté du produit
+        //   - son nom
+        // C’est ce que recevra le renderer pour mettre à jour l’UI.
+        resolve({ id, name });
+      }
     });
   });
 });
 
+
+
 ipcMain.handle('delete-product', (event, id) => {
+  // Handler appelé depuis :
+  //   window.electron.invoke('delete-product', id)
+  //
+  // Supprime un produit selon son ID.
   return new Promise((resolve, reject) => {
     db.remove(id, (err) => {
       if (err) reject(err);
+      // On renvoie simplement `true` si tout s’est bien passé,
+      // ce qui permet au renderer de savoir que la suppression est effective.
       else resolve(true);
     });
   });
 });
+
 ```
 
 ### renderer.js
