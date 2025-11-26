@@ -95,9 +95,9 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Présentation oral & attendus
+* Présentation oral & attendus [▶️](Slides/13-Oral/13-oral.md)
 * Finalisation du projet
-* Création des support de présentation
+* Création des supports de présentation
 
 Reste de la journée :
   
@@ -105,6 +105,4 @@ Reste de la journée :
 
 ### Jour 5 - Soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
 
-* Finalisation du projet 
-* Création des support de présentation
-* **Soutenance**
+* **Soutenances**
