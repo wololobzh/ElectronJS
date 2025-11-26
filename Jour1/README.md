@@ -11,7 +11,7 @@ Projets proposés :
 * [QCM & Revision]()
 * [Board pour devenir riche]()
 * [ElectronStrickeFPS](https://gitlab.com/thibo.tanguy/electron-fps)
-* [Tamagoshi](https://github.com/kaluxxx/tamagochi-electron)
+* [Tamagoshi](https://github.com/kaluxxx/tamagochi-electron) x Claude
 * [IDE]()
 * [Gestionnaire de modes GTA]()
 * [Créateur de poules et tableaux pour le tennis]()
