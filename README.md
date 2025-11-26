@@ -96,11 +96,11 @@ Reste de la journée :
 De 9h à 11h :
 
 * Présentation oral & attendus [▶️](Slides/13-Oral/13-oral.md)
-* Finalisation du projet
-* Création des supports de présentation
 
 Reste de la journée :
-  
+
+* Finalisation du projet
+* Création des supports de présentation
 * [TP : Projet fils rouge](./Jour1/TP.md)
 
 ### Jour 5 - Soutenance orale [👨‍🏫](./Jour4/TP-Soutenance.md)
