@@ -95,7 +95,7 @@ Reste de la journée :
 
 De 9h à 11h :
 
-* Présentation oral & attendus [▶️](Slides/13-Oral/13-oral.md)
+* Présentation orale & attendus [▶️](Slides/13-Oral/13-oral.md)
 
 Reste de la journée :
 
