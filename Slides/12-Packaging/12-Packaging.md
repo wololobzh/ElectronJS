@@ -92,7 +92,107 @@ Voici la config :
     }
   }
 }
+```
 
+---
+
+```json
+{
+  // Nom de ton projet NPM / Electron.
+  // Utilisé comme identifiant interne.
+  "name": "demoavecsqlite3",
+
+  // Version du projet selon SemVer : MAJOR.MINOR.PATCH
+  "version": "1.0.0",
+
+  // Description lisible par les utilisateurs/développeurs.
+  "description": "Demo Electron + SQLite3",
+
+  // Fichier principal exécuté par Electron (processus principal).
+  "main": "main.js",
+
+  // Scripts NPM pour automatiser les actions courantes.
+  "scripts": {
+    // Lance l'application en mode développement.
+    // MODE=dev permet à ton code de charger sqlite3 depuis node_modules.
+    "start": "set MODE=dev && electron .",
+
+    // Lance les tests Jest en mode développeur.
+    "test": "set MODE=dev && jest",
+
+    // Génère une application packagée (Windows/Mac/Linux selon OS).
+    "build": "electron-builder",
+
+    // Génère EXCLUSIVEMENT une version Windows (installeur .exe).
+    "build:win": "electron-builder --win"
+  },
+
+  // Dépendances nécessaires en production (fournies dans la build Electron).
+  "dependencies": {
+    // Module SQLite natif utilisé par ton application.
+    "sqlite3": "^5.1.7"
+  },
+
+  // Dépendances utilisées uniquement en développement :
+  // Electron, outil de build, framework de tests.
+  "devDependencies": {
+    // Framework principal permettant de créer une app desktop JS.
+    "electron": "^39.2.3",
+
+    // Outil complet pour packager/signature/installeur Electron.
+    "electron-builder": "^26.0.12",
+
+    // Framework pour les tests unitaires.
+    "jest": "^30.2.0"
+  },
+
+  // Configuration pour electron-builder (packaging).
+  "build": {
+
+    // Identifiant unique de l'application (reverse DNS).
+    // Utilisé par Windows/macOS pour reconnaître l'app.
+    "appId": "com.demo.app",
+
+    // Nom visible de l'application (menu démarrer, installeur…).
+    "productName": "DemoApp",
+
+    // Configuration des dossiers de build.
+    "directories": {
+      // Répertoire où sera généré l'exécutable final.
+      "output": "dist"
+    },
+
+    // Active la création du fichier app.asar (archive du code).
+    "asar": true,
+
+    // Liste des fichiers inclus/exclus dans la build finale.
+    "files": [
+      // Inclut tous les fichiers du projet.
+      "**/*",
+
+      // Exclut le dossier dist (pour éviter d’inclure une ancienne build).
+      "!dist/**/*",
+
+      // Exclut le dossier test (les tests ne sont pas inclus dans l'app finale).
+      "!test/**/*"
+    ],
+
+    // Configuration spécifique pour Windows.
+    "win": {
+      // Format du packager Windows : NSIS → crée un installeur .exe
+      "target": "nsis",
+
+      // Désactive la signature automatique de l'exécutable.
+      "signAndEditExecutable": false,
+
+      // Ne vérifie pas la signature du code lors des mises à jour.
+      "verifyUpdateCodeSignature": false,
+
+      // Ne force pas la signature (pratique pour les projets perso).
+      "forceCodeSigning": false
+    }
+  }
+}
 ```
 
 ---
@@ -126,7 +226,7 @@ Dans le dossier `dist/` on obtient :
 
 ---
 
-# 5. Ajouter une icône (important !)
+# 5. Ajouter une icône
 
 Chaque OS a un format spécifique :
 
@@ -136,7 +236,7 @@ Chaque OS a un format spécifique :
 | macOS   | `.icns` |
 | Linux   | `.png`  |
 
-Tu places tes icônes dans `assets/` puis tu ajustes :
+Placez les icônes dans `assets/` puis ajustez :
 
 ```json
 "win": { "icon": "assets/icon.ico" }
@@ -144,39 +244,4 @@ Tu places tes icônes dans `assets/` puis tu ajustes :
 
 ---
 
-# 6. Packaging + React (ou Webpack / Vite)
-
-Si ton front est compilé (React), pense à :
-
-1. **builder le front** :
-
-```bash
-npm run build:ui
-```
-
-2. mettre l’output dans `build.files` :
-
-```json
-"files": [
-  "build/**/*",
-  "main.js",
-  "preload.js"
-]
-```
-
----
-
-# 7. Gestion des variables d’environnement
-
-Pour distinguer packagé / dev :
-
-```js
-if (app.isPackaged) {
-  console.log("App packagée");
-} else {
-  console.log("Mode développement");
-}
-```
-
----
 
