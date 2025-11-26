@@ -441,6 +441,8 @@ ipcMain.handle('delete-product', (event, id) => {
 ### renderer.js
 
 ```js
+//Pont entre front et les handlers dumain, seul les handlers autorisés sont énuméré ici.
+
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
@@ -479,156 +481,37 @@ contextBridge.exposeInMainWorld('api', {
 ### db.test.js
 
 ```js
-jest.mock("sqlite3", () => ({
-  verbose: () => ({
-    Database: jest.fn().mockImplementation(() => {
-      return {
-        serialize: (fn) => fn(),
-        run: jest.fn((query, params, cb) => cb && cb.call({ lastID: 1 }, null)),
-        all: jest.fn((query, params, cb) => cb(null, [{ id: 1, name: "Pommes" }]))
-      };
-    })
-  })
-}));
+const fs = require('fs');
 
-const db = require("../db");
-
-describe("DB Tests", () => {
-
-  test("add() insère un produit", (done) => {
-    db.add("Pommes", (err, id) => {
-      expect(err).toBeNull();
-      expect(id).toBe(1);
-      done();
-    });
-  });
-
-  test("getAll() renvoie les produits", (done) => {
-    db.getAll((err, rows) => {
-      expect(err).toBeNull();
-      expect(rows).toEqual([{ id: 1, name: "Pommes" }]);
-      done();
-    });
-  });
-
-  test("remove() supprime un produit", (done) => {
-    db.remove(1, (err) => {
-      expect(err).toBeNull();
-      done();
-    });
-  });
-
-});
-```
-
----
-
-### main.test.js
-
-```js
-jest.mock('../db', () => ({
-  getAll: jest.fn(),
-  add: jest.fn(),
-  remove: jest.fn()
-}));
-
-// Mock Electron
-jest.mock('electron', () => {
-  return {
-    ipcMain: {
-      handle: jest.fn()
-    },
-    BrowserWindow: jest.fn().mockImplementation(() => ({
-      loadFile: jest.fn()
-    })),
-    app: {
-      whenReady: () => ({ then: (fn) => fn() })
-    }
-  };
+// On crée une base temporaire juste pour le test
+beforeAll(() => {
+  if (fs.existsSync('test.db')) 
+    fs.unlinkSync('test.db');
 });
 
-const db = require('../db');
-require('../main'); // charge et exécute les handlers IPC
+const dbModule = require('../db'); // ta vraie base
 
-describe("IPC Handlers", () => {
-
-  test("get-products renvoie la liste", async () => {
-    const mockRows = [{ id: 1, name: "Lait" }];
-    db.getAll.mockImplementation((cb) => cb(null, mockRows));
-
-    const handler = require("electron").ipcMain.handle.mock.calls.find(
-      c => c[0] === "get-products"
-    )[1];
-
-    const result = await handler();
-
-    expect(result).toEqual(mockRows);
-  });
-
-  test("add-product renvoie l'objet ajouté", async () => {
-    db.add.mockImplementation((name, cb) => cb(null, 42));
-
-    const handler = require("electron").ipcMain.handle.mock.calls.find(
-      c => c[0] === "add-product"
-    )[1];
-
-    const result = await handler(null, "Bananes");
-
-    expect(result).toEqual({ id: 42, name: "Bananes" });
-  });
-
-  test("delete-product renvoie true", async () => {
-    db.remove.mockImplementation((id, cb) => cb(null));
-
-    const handler = require("electron").ipcMain.handle.mock.calls.find(
-      c => c[0] === "delete-product"
-    )[1];
-
-    const result = await handler(null, 123);
-
-    expect(result).toBe(true);
-  });
-
-});
-```
-
----
-
-### renderer.test.js
-
-```js
-jest.mock("electron", () => ({
-  contextBridge: {
-    exposeInMainWorld: jest.fn()
-  },
-  ipcRenderer: {
-    invoke: jest.fn()
-  }
-}));
-
-require("../renderer");
-
-const { contextBridge, ipcRenderer } = require("electron");
-
-describe("Renderer preload", () => {
-  test("API exposée correctement", () => {
-    expect(contextBridge.exposeInMainWorld).toHaveBeenCalled();
-
-    const args = contextBridge.exposeInMainWorld.mock.calls[0];
-    const apiObj = args[1];
-
-    expect(typeof apiObj.getProducts).toBe("function");
-    expect(typeof apiObj.addProduct).toBe("function");
-    expect(typeof apiObj.deleteProduct).toBe("function");
-  });
-
-  test("getProducts utilise ipcRenderer.invoke", async () => {
-    ipcRenderer.invoke.mockResolvedValue([{ id: 1 }]);
-    const api = contextBridge.exposeInMainWorld.mock.calls[0][1];
-
-    const res = await api.getProducts();
-    expect(res).toEqual([{ id: 1 }]);
-    expect(ipcRenderer.invoke).toHaveBeenCalledWith("get-products");
+test("INSERT réel dans SQLite", (done) => {
+  dbModule.add("Banane", (err, id) => {
+    expect(err).toBeNull();
+    expect(id).toBeGreaterThan(0);
+    done();
   });
 });
+
+test("SELECT réel", (done) => {
+  dbModule.getAll((err, rows) => {
+    expect(err).toBeNull();
+    expect(rows.length).toBeGreaterThan(0);
+    done();
+  });
+});
+
+test("DELETE réel", (done) => {
+  dbModule.remove(1, (err) => {
+    expect(err).toBeNull();
+    done();
+  });
+});
+
 ```
