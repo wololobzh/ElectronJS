@@ -113,49 +113,150 @@ shopping-app/
 ### db.js
 
 ```js
+// --------------------------------------------------------------
+// Import natif de Node.js permettant de manipuler les chemins
+// de fichiers et dossiers de manière indépendante du système
+// (Windows, Linux, macOS).
+// --------------------------------------------------------------
 const path = require('path');
 
+
+// Variable qui contiendra l’instance du module sqlite3.
+// Elle n’est pas encore définie car le chemin du module dépend
+// de si on est en mode développeur ou en version packagée.
 let sqlite3 = null;
 
+
+// --------------------------------------------------------------
+// CE BLOC DÉTERMINE COMMENT CHARGER SQLITE3
+// --------------------------------------------------------------
+// Si la variable d'environnement MODE vaut "dev", c'est qu'on est
+// en mode développement. Dans ce cas, on charge sqlite3 depuis
+// node_modules normalement.
+// Cela permet de travailler facilement avec `npm install sqlite3`.
+// --------------------------------------------------------------
 if ((process.env.MODE || "").trim() === "dev") {
   sqlite3 = require('sqlite3').verbose();
+
 } else {
-  // Force sqlite3 à être chargé depuis app.asar/node_modules
+
+  // ------------------------------------------------------------
+  // Sinon (donc en mode production packagé dans Electron)
+  // sqlite3 ne peut PAS être chargé depuis node_modules classique,
+  // car ils sont encapsulés dans app.asar.
+  //
+  // On force donc le chargement du module sqlite3 depuis :
+  //   process.resourcesPath/app.asar/node_modules/sqlite3
+  //
+  // process.resourcesPath pointe vers :
+  //   - Sur Windows : C:\Program Files\MonApp\resources
+  //   - Sur macOS : /Applications/MonApp.app/Contents/Resources
+  //
+  // Ce chemin existe seulement en mode Electron packagé.
+  // ------------------------------------------------------------
   const sqlite3Path = path.join(process.resourcesPath, 'app.asar', 'node_modules', 'sqlite3');
+
+  // Charge sqlite3 depuis ce chemin spécifique (dépackagé automatiquement)
   sqlite3 = require(sqlite3Path).verbose();
 }
 
+//📦 Pourquoi Electron utilise ASAR ?
+//Parce que :
+//Tout le code de l'app est regroupé en un seul fichier
+// plus facile à distribuer
+// répertoires plus propres
+// Plus difficile d’aller modifier le code
+// un utilisateur lambda ne peut pas éditer les fichiers de l'app aussi facilement
+// Chargement plus rapide
+// l'archive est lue en mémoire comme un seul bloc
+
+
+// --------------------------------------------------------------
+// CHOIX DE LA BASE PATH
+// --------------------------------------------------------------
+// process.resourcesPath existe seulement dans Electron packagé.
+// Si c'est le cas → on utilise ce chemin.
+// Sinon → on est probablement dans Jest ou Node simple, donc on
+// utilise __dirname (chemin du fichier courant).
+// --------------------------------------------------------------
 if (process.resourcesPath) {
-  // Cas Electron : build / app packagée
+  // Chemin de base des fichiers embarqués dans l’application packagée
   basePath = process.resourcesPath;
 } else {
-  // Cas tests Jest ou Node pur
+  // Environnement de test ou exécution directe avec Node
   basePath = __dirname;
 }
 
-// Base SQLite
+
+// --------------------------------------------------------------
+// Définition du chemin complet vers la base SQLite.
+// La base sera stockée à la racine du dossier correspondant
+// (resources en production, ou dossier du script en dev).
+// --------------------------------------------------------------
 const dbFile = path.join(basePath, 'shopping.db');
 
+
+// --------------------------------------------------------------
+// Ouverture / création de la base SQLite.
+// Si le fichier n'existe pas, SQLite le crée automatiquement.
+// --------------------------------------------------------------
 const db = new sqlite3.Database(dbFile);
 
+
+// --------------------------------------------------------------
+// Initialisation de la base : création de la table "products"
+// si elle n'existe pas déjà.
+// serialize() garantit que les commandes seront exécutées
+// dans l’ordre.
+// --------------------------------------------------------------
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS products (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL
+      id INTEGER PRIMARY KEY AUTOINCREMENT,   -- identifiant auto-incrémenté
+      name TEXT NOT NULL                      -- nom du produit, obligatoire
     )
   `);
 });
 
+
+// --------------------------------------------------------------
+// EXPORT DU MODULE
+// --------------------------------------------------------------
+// On expose ici plusieurs méthodes pour interagir avec la base :
+//   - getAll()  → récupérer tous les produits
+//   - add()     → ajouter un produit
+//   - remove()  → supprimer un produit par ID
+// --------------------------------------------------------------
 module.exports = {
+
+  // ------------------------------------------------------------
+  // Récupère tous les produits dans la base.
+  // db.all() renvoie un tableau d’objets représentant les lignes.
+  // callback(err, results)
+  // ------------------------------------------------------------
   getAll(callback) {
     db.all("SELECT * FROM products", [], callback);
   },
+
+  // ------------------------------------------------------------
+  // Ajoute un produit.
+  // db.run() exécute une requête sans résultat direct.
+  // "this.lastID" contient l'ID généré automatiquement.
+  // ------------------------------------------------------------
   add(name, callback) {
-    db.run("INSERT INTO products (name) VALUES (?)", [name], function (err) {
-      callback(err, this.lastID);
-    });
+    db.run(
+      "INSERT INTO products (name) VALUES (?)",
+      [name],
+      function (err) {        // function() pour accéder à this.lastID
+        callback(err, this.lastID);
+      }
+    );
   },
+
+  // ------------------------------------------------------------
+  // Supprime un produit selon son ID.
+  // La callback est appelée une fois la suppression effectuée.
+  // ------------------------------------------------------------
   remove(id, callback) {
     db.run("DELETE FROM products WHERE id = ?", [id], callback);
   }
