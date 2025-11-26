@@ -20,6 +20,10 @@ Au moins deux types d'entités doivent être persistés.
 
 Un minimum de tests doivent être effectués avec Jest
 
+## Executable
+
+Réalisez un executable de votre application.
+
 # README.md
 
 Un README de qualité vous est demandé tout au long du projet.
