@@ -26,5 +26,5 @@ Projets proposés :
 
 * [Gestionnaire Immobilier](https://github.com/Flotroniks/ContractDesk)
 * [MicrosChatBots](https://github.com/silverace35/)
-* [PokedelectronClicker](https://github.com/charlinno/)
+* [PokedElectronClicker](https://github.com/charlinno/)
 * 
