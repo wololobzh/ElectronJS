@@ -21,3 +21,10 @@ Projets proposés :
 * [TextMe](https://gitlab.com/ewenb3/textme_electron)
 
 # 2025 - SDV M2 Equipe B
+
+Projets proposés :
+
+* [Gestionnaire Immobilier](https://github.com/Flotroniks/ContractDesk)
+* [MicrosChatBots](https://github.com/silverace35/)
+* [PokedelectronClicker](https://github.com/charlinno/)
+* 
