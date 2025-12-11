@@ -30,4 +30,5 @@ Projets proposés :
 * [MapperXlsBdd](https://github.com/JulesGauthier)
 * [GestionnaireGit](https://github.com/Luzogue970/)
 * [BackOffice Commerce](https://github.com/empidev/)
+* [Budjet](https://github.com/farahkharrat05/BudgetAppElectronJs)
 * 
