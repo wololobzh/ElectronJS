@@ -31,4 +31,5 @@ Projets proposés :
 * [GestionnaireGit](https://github.com/Luzogue970/)
 * [BackOffice Commerce](https://github.com/empidev/)
 * [Budjet](https://github.com/farahkharrat05/BudgetAppElectronJs)
+* [Pomocompanion](https://github.com/Neixen911/PomoCompanion)
 * 
