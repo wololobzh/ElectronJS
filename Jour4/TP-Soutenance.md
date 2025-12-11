@@ -2,9 +2,9 @@
 
 Votre soutenance finale aura pour objectif d’évaluer **votre compréhension globale**, votre capacité à **expliquer vos choix techniques**, et la **qualité professionnelle** de votre application desktop développée pendant les 4 jours du module.
 
-Chaque passage durera **15 minutes**, réparties de la manière suivante :
+Chaque passage durera **20 minutes**, réparties de la manière suivante :
 
-* **10 minutes d’oral (présentation avec Slides + démonstration)**
+* **15 minutes d’oral (présentation avec Slides + démonstration)**
 * **5 minutes de questions-réponses**
 
 Cette soutenance est **individuelle**, même si certains éléments ont été vus en groupe.
@@ -17,14 +17,14 @@ Cette soutenance est **individuelle**, même si certains éléments ont été vu
 
 Vous devez présenter votre projet de manière **claire, structurée, professionnelle**, en couvrant les points suivants :
 
-### **1. Pitch du projet (1 minute)**
+### **1. Pitch du projet (3 minute)**
 
 * Nom de l’application
 * Objectif
 * Utilité
 * Fonctionnalités principales
 
-### **2. Démonstration de l’application (3 minutes)**
+### **2. Démonstration de l’application (5 minutes)**
 
 * Présentation rapide de l’interface
 * Ajout / suppression de notes
@@ -66,7 +66,7 @@ Vous devez justifier **pourquoi** ces choix.
 * Structure de la table
 * Gestion des erreurs (si abordée)
 
-### **6. CI/CD & Qualité du projet (2 minutes)**
+### **6. CI/CD & Qualité du projet (3 minutes)**
 
 Détailler brièvement :
 
