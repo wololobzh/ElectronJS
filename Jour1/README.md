@@ -25,7 +25,7 @@ Projets proposés :
 Projets proposés :
 
 * [Gestionnaire Immobilier](https://github.com/Flotroniks/ContractDesk)
-* [MicrosChatBots](https://github.com/silverace35/)
+* [Application Electron Chat LLM Local](https://github.com/silverace35/)
 * [PokedElectronClicker](https://github.com/charlinno/)
 * [MapperXlsBdd](https://github.com/JulesGauthier)
 * [GestionnaireGit](https://github.com/Luzogue970/)
