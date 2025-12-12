@@ -33,3 +33,6 @@ Projets proposés :
 * [Budjet](https://github.com/farahkharrat05/BudgetAppElectronJs)
 * [Pomocompanion](https://github.com/Neixen911/PomoCompanion)
 * [InfosSportives](https://gitlab.com/fwadoux)
+* [BRM Pocker](https://gitlab.com/benjamin.guillome1)
+* [0pie](https://github.com/0pie)
+* [OutilsBTP](https://gitlab.com/sdv-group/btp-manager)
